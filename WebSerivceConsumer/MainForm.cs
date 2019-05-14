@@ -3,32 +3,34 @@ using System.Windows.Forms;
 
 namespace WebSerivceConsumer
 {
-    public partial class MainForm : System.Windows.Forms.Form
+    public partial class MainForm : Form
     {
-        private localhost.ChallengeWebService webService;
+        
         private WaitingForm waitingForm;
 
         public MainForm()
         {
             InitializeComponent();
-            webService = new localhost.ChallengeWebService();
+            
         }
 
-        private void buttonCompute_Click(object sender, EventArgs e)
+        private async void buttonCompute_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(int.Parse(textBoxValueToCompute.Text));
 
             ShowWaitForm();
-            int result = webService.Fibonacci(n);
+            //int result = webService.Fibonacci(n);
+            int result = await AsyncMethods.FibonacciToAsync(n);
             HideWaitForm();
 
             textBoxFibonacciResult.Text = result.ToString();
         }
 
-        private void buttonConvert_Click(object sender, EventArgs e)
+        private async void buttonConvert_Click(object sender, EventArgs e)
         {
             ShowWaitForm();
-            string result = webService.XmlToJson(textBoxXmlToConvert.Text);
+            //string result = webService.XmlToJson(textBoxXmlToConvert.Text);
+            string result = await AsyncMethods.ConvertXmlToAsync(textBoxXmlToConvert.Text);
             HideWaitForm();
 
             textBoxXmlResult.Text = result;
@@ -37,13 +39,13 @@ namespace WebSerivceConsumer
         private void ShowWaitForm()
         {
             if (waitingForm != null && !waitingForm.IsDisposed)
-            {
                 return;
-            }
 
-            waitingForm = new WaitingForm();
-            waitingForm.TopMost = true;
-            waitingForm.StartPosition = FormStartPosition.CenterScreen;
+            waitingForm = new WaitingForm
+            {
+                TopMost = true,
+                StartPosition = FormStartPosition.CenterScreen
+            };
             waitingForm.Show();
             waitingForm.Refresh();
         }
