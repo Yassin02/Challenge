@@ -1,5 +1,6 @@
 ﻿using Challenge.Compute;
 using Challenge.Serialization;
+using System.Threading;
 using System.Web.Services;
 
 namespace Challenge
@@ -18,12 +19,14 @@ namespace Challenge
         [WebMethod]
         public int Fibonacci(int n)
         {
+            Thread.Sleep(2000);
             return FibonacciSequence.Calculate(n);
         }
 
         [WebMethod]
         public string XmlToJson(string xml)
         {
+            Thread.Sleep(2000);
             return SerializeXML.XmlToJson(xml);
         }
     }
