@@ -1,6 +1,7 @@
 ﻿using Challenge.Serialization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Xml;
 
 namespace Challenge.Tests
 {
@@ -8,11 +9,10 @@ namespace Challenge.Tests
     public class SerializingXMLTest
     {
         [TestMethod]
+        [ExpectedException(typeof(XmlException))]
         public void Should_Pass_BadXMLFormatReturnedExpected()
         {
-            string expected = "Bad Xml format";
-            string result = SerializeXML.XmlToJson("<foo>hello</bar>");
-            Assert.AreEqual(expected, result);
+            SerializeXML.XmlToJson("<foo>hello</bar>");
         }
 
         [TestMethod]

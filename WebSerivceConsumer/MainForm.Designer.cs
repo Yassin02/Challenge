@@ -33,17 +33,16 @@
             this.buttonCompute = new System.Windows.Forms.Button();
             this.labelValue = new System.Windows.Forms.Label();
             this.labelFibonacci = new System.Windows.Forms.Label();
+            this.textBoxXmlResult = new System.Windows.Forms.RichTextBox();
             this.textBoxXmlToConvert = new System.Windows.Forms.TextBox();
             this.buttonConvert = new System.Windows.Forms.Button();
             this.labelXmlValue = new System.Windows.Forms.Label();
             this.labelXmlJson = new System.Windows.Forms.Label();
-            this.valueToCompute = new System.Windows.Forms.NumericUpDown();
-            this.textBoxXmlResult = new System.Windows.Forms.RichTextBox();
+            this.textBoxValueToCompute = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.valueToCompute)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -54,7 +53,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.valueToCompute);
+            this.splitContainer1.Panel1.Controls.Add(this.textBoxValueToCompute);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxFibonacciResult);
             this.splitContainer1.Panel1.Controls.Add(this.buttonCompute);
             this.splitContainer1.Panel1.Controls.Add(this.labelValue);
@@ -108,6 +107,14 @@
             this.labelFibonacci.TabIndex = 0;
             this.labelFibonacci.Text = "Compute Fibonacci sequence";
             // 
+            // textBoxXmlResult
+            // 
+            this.textBoxXmlResult.Location = new System.Drawing.Point(164, 145);
+            this.textBoxXmlResult.Name = "textBoxXmlResult";
+            this.textBoxXmlResult.Size = new System.Drawing.Size(200, 123);
+            this.textBoxXmlResult.TabIndex = 5;
+            this.textBoxXmlResult.Text = "";
+            // 
             // textBoxXmlToConvert
             // 
             this.textBoxXmlToConvert.Location = new System.Drawing.Point(164, 102);
@@ -144,28 +151,20 @@
             this.labelXmlJson.TabIndex = 0;
             this.labelXmlJson.Text = "Convert Xml to Json";
             // 
-            // valueToCompute
+            // textBoxValueToCompute
             // 
-            this.valueToCompute.Location = new System.Drawing.Point(160, 105);
-            this.valueToCompute.Name = "valueToCompute";
-            this.valueToCompute.Size = new System.Drawing.Size(200, 22);
-            this.valueToCompute.TabIndex = 5;
+            this.textBoxValueToCompute.Location = new System.Drawing.Point(160, 102);
+            this.textBoxValueToCompute.Name = "textBoxValueToCompute";
+            this.textBoxValueToCompute.Size = new System.Drawing.Size(200, 22);
+            this.textBoxValueToCompute.TabIndex = 5;
             // 
-            // textBoxXmlResult
-            // 
-            this.textBoxXmlResult.Location = new System.Drawing.Point(164, 145);
-            this.textBoxXmlResult.Name = "textBoxXmlResult";
-            this.textBoxXmlResult.Size = new System.Drawing.Size(200, 123);
-            this.textBoxXmlResult.TabIndex = 5;
-            this.textBoxXmlResult.Text = "";
-            // 
-            // Form
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 280);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -173,7 +172,6 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.valueToCompute)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,8 +187,8 @@
         private System.Windows.Forms.Button buttonConvert;
         private System.Windows.Forms.Label labelXmlValue;
         private System.Windows.Forms.Label labelXmlJson;
-        private System.Windows.Forms.NumericUpDown valueToCompute;
         private System.Windows.Forms.RichTextBox textBoxXmlResult;
+        private System.Windows.Forms.TextBox textBoxValueToCompute;
     }
 }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WebSerivceConsumer
@@ -17,7 +16,7 @@ namespace WebSerivceConsumer
 
         private void buttonCompute_Click(object sender, EventArgs e)
         {
-            int n = Convert.ToInt32(valueToCompute.Value);
+            int n = Convert.ToInt32(int.Parse(textBoxValueToCompute.Text));
 
             ShowWaitForm();
             int result = webService.Fibonacci(n);

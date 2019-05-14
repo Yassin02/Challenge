@@ -16,10 +16,9 @@ namespace Challenge.Serialization
             {
                 xmlDocument.LoadXml(xml);
             }
-            catch (XmlException ex)
+            catch (XmlException)
             {
-                return "Bad Xml format";
-                // Log exception
+                throw;
             }
 
             string jsonText = JsonConvert.SerializeXmlNode(xmlDocument);
